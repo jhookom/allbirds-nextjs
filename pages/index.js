@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { useToggle } from '../utils/hooks'
 import Drawer from '../components/Drawer'
+import products from '../utils/products'
 
 export default function Home() {
     const categories = [
@@ -12,71 +13,6 @@ export default function Home() {
         `Boat Shoes`,
         `Flats`,
         `All Weather`
-    ]
-
-    const products = [
-        {
-            name: `Women's Wool Runner Mizzles`,
-            description: `Our weather-ready sneaker made with merino wool and Pulld Guard.`,
-            variants: [
-                {
-                    name: `Natural Gray (Cream Sole)`,
-                    price: `$115`,
-                    image: `1.webp`
-                },
-                {
-                    name: `Savanna Night (Cream Sole)`,
-                    price: `$115`,
-                    image: `2.webp`
-                },
-                {
-                    name: `Black Sans (Asphalt Sole)`,
-                    price: `$115`,
-                    image: `3.webp`
-                },
-                {
-                    name: `Cardamom (Cream Sole)`,
-                    price: `$115`,
-                    image: `4.webp`
-                },
-                {
-                    name: `Ginseng (Beige Sole)`,
-                    price: `$115`,
-                    image: `5.webp`
-                },
-            ]
-        },
-        {
-            name: `Men's Wool Pipers`,
-            description: `Our low top sneaker made with cozy merino wool`,
-            variants: [
-                {
-                    name: `Garden Blue (White)`,
-                    price: `$95`,
-                    image: `a.webp`
-                },
-                {
-                    name: `Savanna Night (Cream Sole)`,
-                    price: `$115`,
-                    image: `2.webp`
-                },
-                {
-                    name: `Black Sans (Asphalt Sole)`,
-                    price: `$115`,
-                    image: `3.webp`
-                },
-                {
-                    name: `Cardamom (Cream Sole)`,
-                    price: `$115`,
-                    image: `4.webp`
-                },
-                {
-                    name: `Ginseng (Beige Sole)`,
-                    price: `$115`,
-                    image: `5.webp`
-                },
-            ]
-        }
     ]
 
     const [menuOpen,menuToggle] = useToggle(false);
@@ -173,15 +109,15 @@ export default function Home() {
                 </div>
 
                 {/* Products */}
-                <div className="py-4 px-4 grid md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+                <div className="py-4 px-4 grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:grid-cols-4">
                     {products.map((p,i) => (
-                        <div className="mb-8 md:h-full" key={i}>
+                        <div className="mb-8 md:h-full flex flex-col" key={i}>
                             <h3>{p.name}</h3>
-                            <div className="text-sm h-8">{p.description}</div>
+                            <div className="text-sm flex-1">{p.description}</div>
                             <div className="shadow-xl bg-white my-2 rounded-md">
                                 <a href="#">
                                     <div>
-                                        <img className="w-full rounded-t-md object-center object-cover md:h-64" src={`\\images\\${p.variants[0].image}`}/>
+                                        <img className="w-full rounded-t-md object-center object-cover sm:h-64 h-40" src={`\\images\\${p.variants[0].image}`}/>
                                     </div>
                                     <div className="px-4 py-4">
                                         <h5>{p.variants[0].name}</h5>
