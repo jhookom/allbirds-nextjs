@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prod": "next build start"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.2.1",

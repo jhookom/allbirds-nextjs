@@ -79,7 +79,9 @@ export default function Home() {
         }
     ]
 
-    const [menuOpen,menuToggle] = useToggle(false)
+    const [menuOpen,menuToggle] = useToggle(false);
+    const [cartOpen,cartToggle] = useToggle(false);
+    const [filterOpen,filterToggle] = useToggle(false);
 
     return (
         <>
@@ -101,7 +103,7 @@ export default function Home() {
                     <img className="h-10" src="/allbirds-logo.svg" alt="Allbirds"/>
                 </div>
                 <div className="flex">
-                    <button className="h-8 w-8">
+                    <button className="h-8 w-8" onClick={cartToggle}>
                         <svg className="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                         </svg>
@@ -110,8 +112,19 @@ export default function Home() {
 
             </header>
 
-            <Drawer open={menuOpen} toggle={menuToggle}>
-                <div className="px-4 py-4">Some Text</div>
+            {/* Menu Drawer */}
+            <Drawer open={menuOpen} toggle={menuToggle} position='left'>
+                <div className="px-4 py-4">Site Menu</div>
+            </Drawer>
+
+            {/* Cart Drawer */}
+            <Drawer open={cartOpen} toggle={cartToggle} position='right'>
+                <div className="px-4 py-4">Cart Status</div>
+            </Drawer>
+
+            {/* Filter Drawer */}
+            <Drawer open={filterOpen} toggle={filterToggle} position='right'>
+                <div className="px-4 py-4">Search Filter</div>
             </Drawer>
 
             <main>
@@ -125,7 +138,7 @@ export default function Home() {
                         <h3>Women's Shoes</h3>
                     </div>
                     <div className="flex">
-                        <button className="h-8 w-8">
+                        <button className="h-8 w-8" onClick={filterToggle}>
                             <svg className="transform rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                             </svg>
