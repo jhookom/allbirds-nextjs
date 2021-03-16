@@ -11,7 +11,7 @@ export default function Drawer({ children, open, toggle, position }) {
 
     return (
         <>
-            <aside className={`transform shadow-sm top-0 w-64 ${init_class} bg-white h-full overflow-auto duration-300 ease-in-out transition-all ${drawer_class.start} z-30 ${open ? drawer_class.open : drawer_class.close }`}>
+            <aside className={`transform shadow-sm top-0 w-72 ${init_class} bg-white h-full overflow-auto duration-300 ease-in-out transition-all ${drawer_class.start} z-30 ${open ? drawer_class.open : drawer_class.close }`}>
                 {children}
             </aside>
             <div onClick={toggle} className={`inset-0 bg-black z-20 opacity-50 ${open ? 'fixed' : 'hidden'}`}></div>
