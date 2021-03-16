@@ -6,7 +6,7 @@ export default function Drawer({ children, open, toggle, position }) {
 
     return (
         <>
-            <aside className={`transform top-0 w-64 fixed bg-white h-full overflow-auto ease-in-out transition-all duration-300 ${drawer_class.start} z-30 ${open ? drawer_class.open : drawer_class.close }`}>
+            <aside className={`transform shadow-sm top-0 w-64 fixed bg-white h-full overflow-auto ease-in-out transition-all ${drawer_class.start} z-30 ${open ? drawer_class.open : drawer_class.close }`}>
                 {children}
             </aside>
             <div onClick={toggle} className={`inset-0 bg-black z-20 opacity-50 ${open ? 'fixed' : 'hidden'}`}></div>
