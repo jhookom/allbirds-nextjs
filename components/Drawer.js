@@ -2,12 +2,13 @@ import { useEffect, useState } from "react"
 
 export default function Drawer({ children, open, toggle, position }) {
 
+    // hack to fix transition flash on first render
     const [init_class,init] = useState('hidden');
-    const drawer_class = position == 'right' ? {start:'left-full', open:'-translate-x-full',close:'translate-x-0'} : {start:'left-0',open:'translate-x-0',close:'-translate-x-full'};
-
     useEffect(() => {
         init('fixed');
     },[open]);
+
+    const drawer_class = position == 'right' ? {start:'left-full', open:'-translate-x-full',close:'translate-x-0'} : {start:'left-0',open:'translate-x-0',close:'-translate-x-full'};
 
     return (
         <>
