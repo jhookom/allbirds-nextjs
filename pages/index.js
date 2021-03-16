@@ -173,7 +173,7 @@ export default function Home() {
                 </div>
 
                 {/* Products */}
-                <div className="py-4 px-4 grid md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-5">
+                <div className="py-4 px-4 grid md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
                     {products.map((p,i) => (
                         <div className="mb-8 md:h-full" key={i}>
                             <h3>{p.name}</h3>
