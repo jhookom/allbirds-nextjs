@@ -58,7 +58,12 @@ export default function Home() {
             <Drawer open={cartOpen} toggle={cartToggle} position='right' full={true}>
                 <div className="px-2 py-4">
                     <div className="space-y-2">
-                        <button onClick={cartToggle} className="btn w-full">Keep Shopping</button>
+                        <button onClick={cartToggle} className="btn w-full">
+                            <svg className="h-5 w-5 animate-bounce" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                            </svg>
+                            <span className="pl-2">Keep Shopping</span>
+                        </button>
                         <button className="btn solid-primary w-full">Checkout</button>
                     </div>
                 </div>
