@@ -38,8 +38,9 @@ export default function Home() {
                 <div className="flex">
                     <img className="h-10" src="/allbirds-logo.svg" alt="Allbirds"/>
                 </div>
-                <div className="flex">
-                    <button className="h-8 w-8" onClick={cartToggle}>
+                <div className="flex relative">
+                    <button className="h-8 w-8 relative" onClick={cartToggle}>
+                        <span className="absolute bottom-0 right-0 -mr-1 -mb-1 shadow-sm bg-primary-800 rounded-full text-white text-xxs font-semibold border-primary-800 border-2 w-4">3</span>
                         <svg className="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                         </svg>
@@ -50,12 +51,21 @@ export default function Home() {
 
             {/* Menu Drawer */}
             <Drawer open={menuOpen} toggle={menuToggle} position='left'>
-                <div className="px-4 py-4">Site Menu</div>
+                <div className="px-4 py-4">Site Menu <a onClick={menuToggle}>Close</a></div>
             </Drawer>
 
             {/* Cart Drawer */}
             <Drawer open={cartOpen} toggle={cartToggle} position='right'>
-                <div className="px-4 py-4">Cart Status</div>
+                <div className="px-2 py-4">
+                    <div className="space-y-2">
+                        <button onClick={cartToggle} className="btn solid-secondary w-full">Keep Shopping</button>
+                        <button className="btn solid-primary w-full">Checkout</button>
+                    </div>
+                    <div className="flex justify-between text-center mt-4 border-b-2 py-2">
+                        <h4>3 Items</h4>
+                        <h4 className="text-left"><span className="text-gray-400 font-normal">Subtotal</span> $103.03</h4>
+                    </div>
+                </div>
             </Drawer>
 
             {/* Filter Drawer */}
@@ -109,7 +119,7 @@ export default function Home() {
                 </div>
 
                 {/* Products */}
-                <div className="py-4 px-4 grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:grid-cols-4">
+                <div className="py-4 px-4 grid md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
                     {products.map((p,i) => (
                         <div className="mb-8 md:h-full flex flex-col" key={i}>
                             <h3>{p.name}</h3>
