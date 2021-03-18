@@ -47,7 +47,7 @@
 
 @layer components {
   .btn {
-    @apply uppercase tracking-wide whitespace-nowrap font-semibold transform transition ease-in-out inline-flex items-center justify-center px-4 py-3 rounded-md text-base
+    @apply uppercase tracking-wide whitespace-nowrap font-semibold transform transition ease-in-out inline-flex items-center justify-center px-4 py-3 rounded-sm text-base
   }
   .solid-primary {
     @apply bg-primary-800 text-white hover:bg-primary-700 active:bg-primary-600 text-shadow-sm shadow-sm 
