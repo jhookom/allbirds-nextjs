@@ -58,12 +58,12 @@ export default function Home() {
             <Drawer open={cartOpen} toggle={cartToggle} position='right'>
                 <div className="px-2 py-4">
                     <div className="space-y-2">
-                        <button onClick={cartToggle} className="btn solid-secondary w-full">Keep Shopping</button>
+                        <button onClick={cartToggle} className="btn w-full">Keep Shopping</button>
                         <button className="btn solid-primary w-full">Checkout</button>
                     </div>
                     <div className="flex justify-between text-center mt-4 border-b-2 py-2">
                         <h4>3 Items</h4>
-                        <h4 className="text-left"><span className="text-gray-400 font-normal">Subtotal</span> $103.03</h4>
+                        <h4 className="text-left">$103.03</h4>
                     </div>
                 </div>
             </Drawer>
