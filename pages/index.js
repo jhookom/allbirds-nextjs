@@ -61,10 +61,10 @@ export default function Home() {
                         <button onClick={cartToggle} className="btn w-full">Keep Shopping</button>
                         <button className="btn solid-primary w-full">Checkout</button>
                     </div>
-                    <div className="flex justify-between text-center mt-4 border-b-2 py-2">
-                        <h4>3 Items</h4>
-                        <h4 className="text-left">$103.03</h4>
-                    </div>
+                </div>
+                <div class="px-4 py-4 bg-gray-200 shadow-inner flex justify-between text-center">
+                    <h4>3 Items</h4>
+                    <h4 className="text-left">$103.03</h4>
                 </div>
             </Drawer>
 
